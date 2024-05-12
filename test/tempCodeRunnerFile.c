@@ -1,0 +1,2 @@
+
+    readCsram(cores);
