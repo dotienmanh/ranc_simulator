@@ -19,6 +19,7 @@ void get_network_accuracy(){
         printf("Error opening file tb_correct.txt\n");
         exit(1);
     }
+    FILE *f_get_debug=fopen("./predict/debug.txt","w");
     double mnist_correct=0;
     for(int i=0;i<max_mnist;i++){
         char predict_temp[1];
@@ -34,7 +35,6 @@ void get_network_accuracy(){
         }
         int correct = binaryToDecimalUnsigned(correct_temp,sizeof(correct_temp)/sizeof(correct_temp[0]));
 
-
         if(predict == correct){
             mnist_correct += 1;
         }
@@ -43,4 +43,5 @@ void get_network_accuracy(){
     printf("Network Accuracy: %.2f \n",mnist_correct/max_mnist *100);
     fclose(f_get_correct);
     fclose(f_get_predict);
+    fclose(f_get_debug);
 }
