@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <math.h>
+#include <unistd.h>
 #include "core.c"
 #include "convert.c"
 
@@ -10,7 +11,7 @@ void readCsram(struct core cores[]){
     FILE *f;
     char filename_csram[100];
     for(int core=0;core<5;core++){
-        snprintf(filename_csram, sizeof(filename_csram), "./streaming/csram_00%d.mem", core);
+        snprintf(filename_csram, sizeof(filename_csram),PATH"/streaming/csram_00%d.mem",core);
         f= fopen(filename_csram,"r");
         if (f==NULL){
             printf("\n invalid csram file");
@@ -18,7 +19,7 @@ void readCsram(struct core cores[]){
         }
         for (int j = 0; j < cores[core].max_neurons; j++) {
             char line[368];
-            if (fscanf(f, "%s", line) != 1){ 
+            if (fscanf(f, "%s", line) != 1){
                 exit(1);
             }
             else {
@@ -116,7 +117,7 @@ void readTC(struct core cores[]){
     char filename_tc[100];
     FILE *f;
     for(int core=0;core<5;core++){
-        snprintf(filename_tc, sizeof(filename_tc), "./streaming/tc_00%d.mem", core);
+        snprintf(filename_tc, sizeof(filename_tc),PATH"/streaming/tc_00%d.mem", core);
         f= fopen(filename_tc,"r");
         if (f==NULL){
             printf("\n invalid tc file");
@@ -129,7 +130,7 @@ void readTC(struct core cores[]){
                 for (int k = 0; k < 2;k++){
                     axon_type_temp[k]=line[k] - '0';
                 }
-            cores[core].axons[j].axon_type=binaryToDecimalSigned(axon_type_temp,sizeof(axon_type_temp)/sizeof(axon_type_temp[0]));
+            cores[core].axons[j].axon_type=binaryToDecimalUnsigned(axon_type_temp,sizeof(axon_type_temp)/sizeof(axon_type_temp[0]));
             cores[core].axons[j].weight=cores[core].neurons[0].formatted_weight[cores[core].axons[j].axon_type];
             
         }
@@ -141,8 +142,10 @@ void save_parameter_to_file(struct core cores[]){
     FILE *f;
     char filename_write[100];
     char filename_tc[100];
+    mkdir(PATH"/neuron_parameter");
+    mkdir(PATH"/axon_parameter");
     for(int core=0;core<5;core++){
-        snprintf(filename_write, sizeof(filename_write), "./neuron_parameter/neuron_core_00%d.txt", core);
+        snprintf(filename_write, sizeof(filename_write),PATH"/neuron_parameter/neuron_core_00%d.txt", core);
         f= fopen(filename_write,"w");
         for (int neuron = 0; neuron < cores[core].max_neurons; neuron++) {
             fprintf(f,"\n");
@@ -168,7 +171,7 @@ void save_parameter_to_file(struct core cores[]){
             fprintf(f,"spike_tick %d\n", cores[core].neurons[neuron].spike_tick);
         }
         fclose(f);
-        snprintf(filename_tc, sizeof(filename_tc), "./axon_parameter/axon__core_00%d.txt", core);
+        snprintf(filename_tc, sizeof(filename_tc),PATH"/axon_parameter/axon__core_00%d.txt",core);
         f= fopen(filename_tc,"w");
         for (int axon=0;axon<256;axon++){
             fprintf(f,"CORE %d AXON %d\n",core+1,axon+1);
@@ -180,6 +183,7 @@ void save_parameter_to_file(struct core cores[]){
     }
 }
 void get_parameter(struct core cores[]){
+    printf("Installing Network...\n");
     create_core(cores);
     readCsram(cores);
     readTC(cores);
