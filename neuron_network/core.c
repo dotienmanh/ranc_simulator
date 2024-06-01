@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "neuron.c"
 #include "axon.c"
+#include "param.c"
 
-#define max_core 5
-#define max_axon 256
-#define max_neuron_layer_1 64
-#define max_neuron_layer_2 250
+// #define max_core 5
+// #define max_axon 256
+// #define max_neuron_layer_1 64
+// #define max_neuron_layer_2 250
 
 struct core{
     struct neuron *neurons;

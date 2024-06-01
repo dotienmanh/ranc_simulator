@@ -1,13 +1,21 @@
+#include <unistd.h>
 #include "get_parameter.c"
 #include "get_packet.c"
 #include "get_network_accuracy.c"
-
-#define class 10
+#include "param.c"
 
 void neuron_block_update_potential(struct core cores[], int *des_core, int *des_axon){
     for(int neuron = 0; neuron < cores[*des_core].max_neurons; neuron++){
         if(cores[*des_core].neurons[neuron].conns[*des_axon]){
             cores[*des_core].neurons[neuron].current_potential += cores[*des_core].neurons[neuron].formatted_weight[cores[*des_core].axons[*des_axon].axon_type];
+        }
+    }
+}
+
+void leaky(struct core cores[]){
+    for (int core=0; core < (max_core-1); core++){
+        for (int neuron=0; neuron < cores[core].max_neurons; neuron++){
+            cores[core].neurons[neuron].current_potential += cores[core].neurons[neuron].leak;
         }
     }
 }
@@ -19,7 +27,6 @@ void check_threshold_and_fire(struct core cores[]){
     int dy=0;
     for(int core=0;core<(max_core-1);core++){
         for(int neuron=0; neuron < cores[core].max_neurons;neuron++){
-
             if(cores[core].neurons[neuron].current_potential >= cores[core].neurons[neuron].pos_threshold){
                 cores[core].neurons[neuron].current_potential = cores[core].neurons[neuron].reset_potential;
                 dx = core%4 + cores[core].neurons[neuron].spike_des_core[0];
@@ -41,7 +48,6 @@ void check_threshold_and_fire(struct core cores[]){
 void get_vote_core_5(struct core cores[],int number []){
     int i=0;
     for(int neuron=0;neuron<cores[max_core-1].max_neurons;neuron++){
-
         if(cores[max_core-1].neurons[neuron].current_potential >= cores[max_core-1].neurons[neuron].pos_threshold){
             number[i] += 1;
             cores[max_core-1].neurons[neuron].current_potential = cores[max_core-1].neurons[neuron].reset_potential;
@@ -78,25 +84,39 @@ void get_predict(FILE *f_predict,FILE *f_save_network_predict,int number[],int m
     fprintf(f_predict,"%d\n",predict);
     save_network_vote_class(f_save_network_predict,number,mnist,predict);
 }
+void reset_core(struct core cores[]){
+    for(int num_core=0; num_core < max_core;num_core++){
+        for(int num_neuron=0; num_neuron < cores[num_core].max_neurons; num_neuron++){
+            cores[num_core].neurons[num_neuron].current_potential=0;
+        }
+    }
+}
 
 void active_network(struct core cores[]){
+    printf("Activating Network...\n");
     int des_core = 0 ;
     int des_axon = 0;
     int num_inputs = 0;
-    FILE *f_num_inputs=fopen("./testbench/tb_num_inputs.txt","r");
+    char file_num_inputs[100]=PATH"/testbench/tb_num_inputs.txt";
+    FILE *f_num_inputs=fopen(file_num_inputs,"r");
     if (f_num_inputs == NULL) {
         printf("Error opening file tb_num_inputs.txt\n");
         exit(1);
     }
-    FILE *f_input=fopen("./testbench/tb_input.txt","r");
+    char file_input[100]=PATH"/testbench/tb_input.txt";
+    FILE *f_input=fopen(file_input,"r");
     if (f_input == NULL) {
         printf("Error opening file tb_inputs.txt\n");
         exit(1);
     }
-
-    FILE *f_save_packet=fopen("./packet/packet_mnist.txt","w");
-    FILE *f_predict=fopen("./predict/predict.txt","w");
-    FILE *f_save_network_predict = fopen("./predict/vote_class.txt","w");
+    mkdir(PATH"/predict");
+    mkdir(PATH"/packet");
+    char file_save_packet[100]=PATH"/packet/packet_mnist.txt";
+    FILE *f_save_packet=fopen(file_save_packet,"w");
+    char file_predict[100]=PATH"/predict/predict.txt";
+    FILE *f_predict=fopen(file_predict,"w");
+    char file_save_network_predict[100]=PATH"/predict/vote_class.txt";
+    FILE *f_save_network_predict = fopen(file_save_network_predict,"w");
 
     for(int mnist=0;mnist<max_mnist;mnist++){
         int number[class];
@@ -112,11 +132,12 @@ void active_network(struct core cores[]){
             neuron_block_update_potential(cores,&des_core,&des_axon);
         }
 
+        leaky(cores);
         check_threshold_and_fire(cores);
 
         get_vote_core_5(cores,number);
         get_predict(f_predict,f_save_network_predict,number,mnist);
-
+        reset_core(cores);
     }
     fclose(f_input);
     fclose(f_num_inputs);
