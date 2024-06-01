@@ -12,6 +12,19 @@ void neuron_block_update_potential(struct core cores[], int *des_core, int *des_
     }
 }
 
+void integrate(FILE *f_input, FILE *f_save_packet,FILE *f_num_inputs,int mnist,struct core cores[]){
+    int des_core = 0 ;
+    int des_axon = 0;
+    int num_inputs = 0;
+    fprintf(f_save_packet,"MNIST %d: num_inputs: %d\n",mnist+1,num_inputs=get_num_inputs(f_num_inputs));
+    for(int packet=0;packet<num_inputs;packet++){
+            get_des_packet(f_input,&des_core,&des_axon);
+            fprintf(f_save_packet,"packet %d: des_core: %d ",packet+1,des_core);
+            fprintf(f_save_packet," des_axon: %d\n",des_axon);
+            neuron_block_update_potential(cores,&des_core,&des_axon);
+        }
+}
+
 void leaky(struct core cores[]){
     for (int core=0; core < (max_core-1); core++){
         for (int neuron=0; neuron < cores[core].max_neurons; neuron++){
@@ -20,7 +33,7 @@ void leaky(struct core cores[]){
     }
 }
 
-void check_threshold_and_fire(struct core cores[]){
+void fire(struct core cores[]){
     int des_core_packet=0;
     int des_axon_packet=0;
     int dx=0;
@@ -123,18 +136,12 @@ void active_network(struct core cores[]){
         for(int c=0;c<class;c++){
             number[c]=0;
         }
-        fprintf(f_save_packet,"MNIST %d: num_inputs: %d\n",mnist+1,num_inputs=get_num_inputs(f_num_inputs));
-
-        for(int packet=0;packet<num_inputs;packet++){
-            get_des_packet(f_input,&des_core,&des_axon);
-            fprintf(f_save_packet,"packet %d: des_core: %d ",packet+1,des_core);
-            fprintf(f_save_packet," des_axon: %d\n",des_axon);
-            neuron_block_update_potential(cores,&des_core,&des_axon);
+        if(mnist%1000==0 & mnist != 0){
+            printf("Loading MNIST %d/10000\n", mnist);
         }
-
+        integrate(f_input, f_save_packet, f_num_inputs, mnist, cores);
         leaky(cores);
-        check_threshold_and_fire(cores);
-
+        fire(cores);
         get_vote_core_5(cores,number);
         get_predict(f_predict,f_save_network_predict,number,mnist);
         reset_core(cores);

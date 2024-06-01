@@ -183,8 +183,9 @@ void save_parameter_to_file(struct core cores[]){
     }
 }
 void get_parameter(struct core cores[]){
-    printf("Installing Network...\n");
+    printf("Creating Network...\n");
     create_core(cores);
+    printf("Installing parameter for network...\n");
     readCsram(cores);
     readTC(cores);
     save_parameter_to_file(cores);
