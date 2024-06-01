@@ -6,4 +6,4 @@
 #define max_axon 256
 #define max_neuron_layer_1 64
 #define max_neuron_layer_2 250
-#define PATH "D:/Code/RANC/c_code/parameter/parameter1"
+#define PATH "D:/Code/c_code/parameter/parameter1"
