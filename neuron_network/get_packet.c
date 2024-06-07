@@ -5,6 +5,7 @@
 #include <math.h>
 #include "queue.c"
 
+/*** Lấy địa chỉ đích của các packet từ mnist ***/
 void get_des_packet(FILE *f_input, struct packet *temp_packet){
     char line[30];
     if (fscanf(f_input, "%s", line) != 1){
@@ -32,6 +33,7 @@ void get_des_packet(FILE *f_input, struct packet *temp_packet){
     temp_packet->des_axon = binaryToDecimalUnsigned(des_axon_temp,sizeof(des_axon_temp)/sizeof(des_axon_temp[0]));
 }
 
+/***  Lấy số packet input của 1 ảnh mnist ***/
 int get_num_inputs(FILE *f_num_inputs){
     int num_inputs = 0;
     if (fscanf(f_num_inputs,"%d",&num_inputs) !=1) exit(1);

@@ -1,3 +1,4 @@
+/*** Đổi từ binary sang decimal có dấu ***/
 int binaryToDecimalSigned(int binaryArray[], int size) {
     int decimalNumber = 0;
     int power = size - 1;
@@ -32,6 +33,7 @@ int binaryToDecimalSigned(int binaryArray[], int size) {
     return decimalNumber;
 }
 
+/*** Đổi từ binary sang decimal không dấu ***/
 int binaryToDecimalUnsigned(int binaryArray[], int size) {
     int decimalNumber = 0;
     int power = size - 1;

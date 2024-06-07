@@ -3,14 +3,8 @@
 #include "get_packet.c"
 #include "get_network_accuracy.c"
 #include "param.c"
-void neuron_block_update_potential(struct core cores[], int *des_core, int *des_axon){
-    for(int neuron = 0; neuron < cores[*des_core].max_neurons; neuron++){
-        if(cores[*des_core].neurons[neuron].conns[*des_axon]){
-            cores[*des_core].neurons[neuron].current_potential += cores[*des_core].neurons[neuron].formatted_weight[cores[*des_core].axons[*des_axon].axon_type];
-        }
-    }
-}
 
+/*** Lấy packet từ mnist */
 void get_packet_from_mnist(FILE *f_input, FILE *f_save_packet,FILE *f_num_inputs,int mnist,struct layer layers[], struct packet temp_packet, struct Queue *queue){
     int num_inputs = 0;
     fprintf(f_save_packet,"MNIST %d: num_inputs: %d\n",mnist+1,num_inputs=get_num_inputs(f_num_inputs));
@@ -24,6 +18,7 @@ void get_packet_from_mnist(FILE *f_input, FILE *f_save_packet,FILE *f_num_inputs
     }
 }
 
+/***  Neuron integrate potential ***/
 void integrate(struct Queue *queue, int layer, struct packet temp_packet,struct layer layers[]){
     while (!isEmpty(queue)) {
         temp_packet = dequeue(queue);
@@ -38,6 +33,7 @@ void integrate(struct Queue *queue, int layer, struct packet temp_packet,struct 
     }
 }
 
+/*** Neuron leak potential*/
 void leaky(struct layer layers[],int layer){
     for (int core=0; core < (layers[layer].max_cores); core++){
         for (int neuron=0; neuron < layers[layer].cores[core].max_neurons; neuron++){
@@ -46,6 +42,7 @@ void leaky(struct layer layers[],int layer){
     }
 }
 
+/*** Neuron bắn ***/
 void fire(struct layer layers[], struct Queue *queue, struct packet temp_packet, int layer){
     for(int core=0;core<(layers[layer].max_cores);core++){
         for(int neuron=0; neuron < layers[layer].cores[core].max_neurons;neuron++){
@@ -63,12 +60,15 @@ void fire(struct layer layers[], struct Queue *queue, struct packet temp_packet,
     }
 }
 
+/*** Lấy vote ở output ***/
 void get_vote(struct layer layers[],struct Queue *queue, struct packet temp_packet, int number[]){
     while (!isEmpty(queue)) {
         temp_packet = dequeue(queue);
         number[(temp_packet.des_axon) % class] += 1;
     }
 }
+
+/*** Lưu vote của từng ảnh MNIST ***/
 void save_network_vote_class(FILE *f_save_network_predict,int number[],int mnist,int predict){
     fprintf(f_save_network_predict,"Vote for image    %d\n",mnist+1);
     for(int num=0;num<class;num++){
@@ -148,17 +148,8 @@ void active_network(struct layer layers[]){
             leaky(layers,layer);
             fire(layers,queue,temp_packet,layer);
         }
-        // for (int x=0;x<4;x++){
-        //     for (int y=0;y<64;y++){    
-        //         printf("core %d neuron %d potential: %d\n",x,y,layers[0].cores[x].neurons[y].current_potential);
-        //     }
-        // }
-        
         get_vote(layers,queue,temp_packet,number);
         clearQueue(queue);
-        // for(int i=0;i<class;i++){
-        //     printf("%d \n",number[i]);
-        // }
         get_predict(f_predict,f_save_network_predict,number,mnist);
         reset_network(layers);
     }
