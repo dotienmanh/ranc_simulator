@@ -6,8 +6,7 @@
 #include <unistd.h>
 #include "param.c"
 
-// #define max_mnist 10000
-
+/*** Tính phần trăm đúng của network ***/
 void get_network_accuracy(){
     FILE *f_get_predict;
     char file_get_predict[100]=PATH"/predict/predict.txt";

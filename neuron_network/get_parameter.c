@@ -7,12 +7,13 @@
 #include "layer.c"
 #include "convert.c"
 
+/*** Đọc file Csram ***/
 void readCsram(struct layer layers[]){
     FILE *f;
     char filename_csram[100];
     for (int layer=0;layer<num_layer;layer++){
         for(int core=0;core<layers[layer].max_cores;core++){
-            snprintf(filename_csram, sizeof(filename_csram),PATH"/streaming/csram_00%d.mem",(layer*4+core));
+            snprintf(filename_csram, sizeof(filename_csram),PATH"/streaming/csram_%03d.mem",(layer*4+core));
             f= fopen(filename_csram,"r");
             if (f==NULL){
                 printf("\n invalid csram file");
@@ -114,12 +115,13 @@ void readCsram(struct layer layers[]){
     }
 }
 
+/*** Đọc file TC ***/
 void readTC(struct layer layers[]){
     char filename_tc[100];
     FILE *f;
     for (int layer=0;layer<num_layer;layer++){
         for(int core=0;core<layers[layer].max_cores ;core++){
-            snprintf(filename_tc, sizeof(filename_tc),PATH"/streaming/tc_00%d.mem", (layer*4+core));
+            snprintf(filename_tc, sizeof(filename_tc),PATH"/streaming/tc_%03d.mem", (layer*4+core));
             f= fopen(filename_tc,"r");
             if (f==NULL){
                 printf("\n invalid tc file");
@@ -141,6 +143,7 @@ void readTC(struct layer layers[]){
     }
 }
 
+/*** Lưu tham số network vào file ***/
 void save_parameter_to_file(struct layer layers[]){
     FILE *f;
     char filename_write[100];
@@ -149,7 +152,7 @@ void save_parameter_to_file(struct layer layers[]){
     mkdir(PATH"/axon_parameter");
     for (int layer=0;layer<num_layer;layer++){
         for(int core=0;core<layers[layer].max_cores;core++){
-            snprintf(filename_write, sizeof(filename_write),PATH"/neuron_parameter/neuron_core_00%d.txt", (layer * 4 + core));
+            snprintf(filename_write, sizeof(filename_write),PATH"/neuron_parameter/neuron_core_%03d.txt", (layer * 4 + core));
             f= fopen(filename_write,"w");
             for (int neuron = 0; neuron < layers[layer].cores[core].max_neurons; neuron++) {
                 fprintf(f,"\n");
@@ -187,6 +190,8 @@ void save_parameter_to_file(struct layer layers[]){
         }
     }
 }
+
+/*** Tạo network và lấy tham số cho network ***/
 void get_parameter(struct layer layers[]){
     printf("Creating Network...\n");
     create_network(layers);
