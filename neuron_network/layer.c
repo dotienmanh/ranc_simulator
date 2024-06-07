@@ -43,7 +43,6 @@ void create_network(struct layer layers[num_layer]){
                     layers[layer].cores[core].max_neurons = max_neuron_layer_4;
                 }
                 break;
-                
         }
     }
 }
