@@ -1,0 +1,1024 @@
+LAYER 1 CORE 1 AXON 0
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 1
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 2
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 3
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 4
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 5
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 6
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 7
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 8
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 9
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 10
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 11
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 12
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 13
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 14
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 15
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 16
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 17
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 18
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 19
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 20
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 21
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 22
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 23
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 24
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 25
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 26
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 27
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 28
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 29
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 30
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 31
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 32
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 33
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 34
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 35
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 36
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 37
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 38
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 39
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 40
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 41
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 42
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 43
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 44
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 45
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 46
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 47
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 48
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 49
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 50
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 51
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 52
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 53
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 54
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 55
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 56
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 57
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 58
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 59
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 60
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 61
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 62
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 63
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 64
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 65
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 66
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 67
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 68
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 69
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 70
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 71
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 72
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 73
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 74
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 75
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 76
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 77
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 78
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 79
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 80
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 81
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 82
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 83
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 84
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 85
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 86
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 87
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 88
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 89
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 90
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 91
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 92
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 93
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 94
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 95
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 96
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 97
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 98
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 99
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 100
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 101
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 102
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 103
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 104
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 105
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 106
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 107
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 108
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 109
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 110
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 111
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 112
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 113
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 114
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 115
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 116
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 117
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 118
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 119
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 120
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 121
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 122
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 123
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 124
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 125
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 126
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 127
+axon type: 1
+axon_weight: -1
+ 
+LAYER 1 CORE 1 AXON 128
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 129
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 130
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 131
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 132
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 133
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 134
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 135
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 136
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 137
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 138
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 139
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 140
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 141
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 142
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 143
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 144
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 145
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 146
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 147
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 148
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 149
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 150
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 151
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 152
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 153
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 154
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 155
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 156
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 157
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 158
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 159
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 160
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 161
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 162
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 163
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 164
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 165
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 166
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 167
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 168
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 169
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 170
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 171
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 172
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 173
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 174
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 175
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 176
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 177
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 178
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 179
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 180
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 181
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 182
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 183
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 184
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 185
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 186
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 187
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 188
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 189
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 190
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 191
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 192
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 193
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 194
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 195
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 196
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 197
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 198
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 199
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 200
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 201
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 202
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 203
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 204
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 205
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 206
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 207
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 208
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 209
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 210
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 211
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 212
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 213
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 214
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 215
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 216
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 217
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 218
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 219
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 220
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 221
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 222
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 223
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 224
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 225
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 226
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 227
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 228
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 229
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 230
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 231
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 232
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 233
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 234
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 235
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 236
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 237
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 238
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 239
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 240
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 241
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 242
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 243
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 244
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 245
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 246
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 247
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 248
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 249
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 250
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 251
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 252
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 253
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 254
+axon type: 0
+axon_weight: 1
+ 
+LAYER 1 CORE 1 AXON 255
+axon type: 0
+axon_weight: 1
+ 

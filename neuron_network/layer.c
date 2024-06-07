@@ -11,6 +11,7 @@ struct layer{
 void create_network(struct layer layers[num_layer]){
     for (int layer=0; layer<num_layer; layer++){
         switch(layer){
+            /** layer 0 **/
             case 0:
                 layers[layer].cores = malloc(num_core_layer_1 * sizeof(struct core));
                 layers[layer].max_cores = num_core_layer_1;
@@ -19,6 +20,7 @@ void create_network(struct layer layers[num_layer]){
                     layers[layer].cores[core].max_neurons = max_neuron_layer_1;
                 }
                 break;
+            /** layer 1 **/
             case 1:
                 layers[layer].cores = malloc(num_core_layer_2 * sizeof(struct core));
                 layers[layer].max_cores = num_core_layer_2;
@@ -27,6 +29,7 @@ void create_network(struct layer layers[num_layer]){
                     layers[layer].cores[core].max_neurons = max_neuron_layer_2;
                 }
                 break;
+            /** layer 2 **/
             case 2:
                 layers[layer].cores = malloc(num_core_layer_3 * sizeof(struct core));
                 layers[layer].max_cores = num_core_layer_3;
@@ -35,6 +38,7 @@ void create_network(struct layer layers[num_layer]){
                     layers[layer].cores[core].max_neurons = max_neuron_layer_3;
                 }
                 break;
+            /** layer 3 **/
             case 3:
                 layers[layer].cores = malloc(num_core_layer_4 * sizeof(struct core));
                 layers[layer].max_cores = num_core_layer_4;
