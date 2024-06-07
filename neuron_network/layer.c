@@ -39,14 +39,14 @@ void create_network(struct layer layers[num_layer]){
                 }
                 break;
             /** layer 3 **/
-            case 3:
-                layers[layer].cores = malloc(num_core_layer_4 * sizeof(struct core));
-                layers[layer].max_cores = num_core_layer_4;
-                for (int core = 0; core < (num_core_layer_4); ++core){
-                    layers[layer].cores[core].neurons = malloc(max_neuron_layer_4 * sizeof(struct neuron));
-                    layers[layer].cores[core].max_neurons = max_neuron_layer_4;
-                }
-                break;
+            // case 3:
+            //     layers[layer].cores = malloc(num_core_layer_4 * sizeof(struct core));
+            //     layers[layer].max_cores = num_core_layer_4;
+            //     for (int core = 0; core < (num_core_layer_4); ++core){
+            //         layers[layer].cores[core].neurons = malloc(max_neuron_layer_4 * sizeof(struct neuron));
+            //         layers[layer].cores[core].max_neurons = max_neuron_layer_4;
+            //     }
+            //     break;
         }
     }
 }
