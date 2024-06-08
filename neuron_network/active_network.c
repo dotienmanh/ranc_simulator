@@ -1,21 +1,24 @@
 #include <unistd.h>
 #include "get_parameter.c"
-// #include "get_packet.c"
 #include "get_network_accuracy.c"
 #include "param.c"
 
 /*** Lấy packet từ mnist */
 void get_packet_from_mnist(FILE *f_input, FILE *f_save_packet,FILE *f_num_inputs,int mnist,struct layer layers[]){
     int num_inputs = 0;
-    fprintf(f_save_packet,"MNIST %d: num_inputs: %d\n",mnist+1,num_inputs=get_num_inputs(f_num_inputs));
+    if(save_to_file){
+        fprintf(f_save_packet,"MNIST %d: num_inputs: %d\n",mnist+1,num_inputs=get_num_inputs(f_num_inputs));
+    }
     for(int packet=0;packet<num_inputs;packet++){
         int des_layer;
         int des_core;
         int des_axon;
         get_des_packet(f_input,&des_layer,&des_core,&des_axon);
-        fprintf(f_save_packet,"packet %d: des_layer:%d; des_core: %d; ",packet+1,des_layer, des_core);
-        fprintf(f_save_packet,"des_axon: %d\n",des_axon);
-        fflush(f_save_packet);
+        if(save_to_file){
+            (f_save_packet,"packet %d: des_layer:%d; des_core: %d; ",packet+1,des_layer, des_core);
+            fprintf(f_save_packet,"des_axon: %d\n",des_axon);
+            fflush(f_save_packet);
+        }
         enqueue(layers[des_layer].cores[des_core].queue,des_axon);
     }
 }
@@ -96,10 +99,12 @@ void get_predict(FILE *f_predict,FILE *f_save_network_predict,int number[],int m
             get_max=number[i];
         }
     }
-    fprintf(f_predict,"%d\n",predict);
-    fflush(f_predict);
-    save_network_vote_class(f_save_network_predict,number,mnist,predict);
-    fflush(f_save_network_predict);
+    if(save_to_file){
+        fprintf(f_predict,"%d\n",predict);
+        fflush(f_predict);
+        save_network_vote_class(f_save_network_predict,number,mnist,predict);
+        fflush(f_save_network_predict);
+    }
 }
 
 /*** Reset network sau mỗi lần đọc ảnh ***/
@@ -114,7 +119,7 @@ void reset_network(struct layer layers[]){
 }
 
 void active_network(struct layer layers[]){
-    /*** Tạo đường dẫn lưu, đọc fiile ***/
+    /*** Tạo đường dẫn lưu, đọc file ***/
     char file_num_inputs[100]=PATH"/testbench/tb_num_inputs.txt";
     FILE *f_num_inputs=fopen(file_num_inputs,"r");
     if (f_num_inputs == NULL) {
@@ -135,13 +140,12 @@ void active_network(struct layer layers[]){
     FILE *f_predict=fopen(file_predict,"w");
     char file_save_network_predict[100]=PATH"/predict/vote_class.txt";
     FILE *f_save_network_predict = fopen(file_save_network_predict,"w");
-
+    
     printf("Activating Network...\n");
 
     int num_inputs = 0;     
 
     for(int mnist=0;mnist<max_mnist;mnist++){
-        // struct Queue* queue = createQueue();
         int number[class];
         for(int c=0;c<class;c++){
             number[c]=0;
@@ -158,7 +162,6 @@ void active_network(struct layer layers[]){
             }
         }
         get_vote(layers,number);
-        // clearQueue(queue);
         get_predict(f_predict,f_save_network_predict,number,mnist);
         reset_network(layers);
     }
