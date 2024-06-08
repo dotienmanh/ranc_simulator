@@ -6,8 +6,9 @@
 /*** Lấy packet từ mnist */
 void get_packet_from_mnist(FILE *f_input, FILE *f_save_packet,FILE *f_num_inputs,int mnist,struct layer layers[]){
     int num_inputs = 0;
+    num_inputs=get_num_inputs(f_num_inputs);
     if(save_to_file){
-        fprintf(f_save_packet,"MNIST %d: num_inputs: %d\n",mnist+1,num_inputs=get_num_inputs(f_num_inputs));
+        fprintf(f_save_packet,"MNIST %d: num_inputs: %d\n",mnist+1,num_inputs);
     }
     for(int packet=0;packet<num_inputs;packet++){
         int des_layer;
@@ -99,9 +100,9 @@ void get_predict(FILE *f_predict,FILE *f_save_network_predict,int number[],int m
             get_max=number[i];
         }
     }
+    fprintf(f_predict,"%d\n",predict);
+    fflush(f_predict);
     if(save_to_file){
-        fprintf(f_predict,"%d\n",predict);
-        fflush(f_predict);
         save_network_vote_class(f_save_network_predict,number,mnist,predict);
         fflush(f_save_network_predict);
     }
