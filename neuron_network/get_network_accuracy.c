@@ -47,8 +47,8 @@ void get_network_accuracy(){
             debug[correct][predict] +=1;
         }
     }
+    printf("Network Accuracy: %.2f \n",mnist_correct/max_mnist *100);
     if(save_to_file){
-        printf("Network Accuracy: %.2f \n",mnist_correct/max_mnist *100);
         for(int i=0;i<10;i++){
             fprintf(f_get_debug,"So %d bi nham voi: \n",i);
             for(int j=0;j<10;j++){

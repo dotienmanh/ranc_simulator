@@ -2,7 +2,8 @@
 #define class  10
 #define max_packet max_axon*4
 #define PATH "D:/Code/parameter/param78"
-#define save_to_file 0
+
+#define save_to_file 0  // Lưu ra file text
 
 /*** Tham số cho network ***/
 #define num_layer 4
