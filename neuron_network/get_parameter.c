@@ -198,5 +198,7 @@ void get_parameter(struct layer layers[]){
     printf("Installing parameter for network...\n");
     readCsram(layers);
     readTC(layers);
-    save_parameter_to_file(layers);
+    if(save_to_file){
+        save_parameter_to_file(layers);
+    }
 }
