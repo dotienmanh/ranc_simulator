@@ -4,9 +4,10 @@
 #include <string.h>
 #include <math.h>
 #include "queue.c"
+#include "convert.c"
 
 /*** Lấy địa chỉ đích của các packet từ mnist ***/
-void get_des_packet(FILE *f_input, struct packet *temp_packet){
+void get_des_packet(FILE *f_input,int *des_layer, int *des_core, int *des_axon){
     char line[30];
     if (fscanf(f_input, "%s", line) != 1){
         exit(1);
@@ -20,17 +21,14 @@ void get_des_packet(FILE *f_input, struct packet *temp_packet){
     for (int i=0;i<9;i++){
         dy[i] = line[i+9] - '0';
     }
-    int temp_dx=binaryToDecimalSigned(dx,sizeof(dx)/sizeof(dx[0]));
-    int temp_dy=binaryToDecimalSigned(dy,sizeof(dy)/sizeof(dy[0]));
-    //printf("%d %d\n", temp_dx, temp_dy);
-    temp_packet->des_core_dx=temp_dx;
-    temp_packet->des_core_dy=temp_dy;
+    *des_core = binaryToDecimalSigned(dx,sizeof(dx)/sizeof(dx[0]));
+    *des_layer = binaryToDecimalSigned(dy,sizeof(dy)/sizeof(dy[0]));
 
     int des_axon_temp[8];
     for (int i=0;i<8;i++){
         des_axon_temp[i]=line[i+18] - '0';
     }
-    temp_packet->des_axon = binaryToDecimalUnsigned(des_axon_temp,sizeof(des_axon_temp)/sizeof(des_axon_temp[0]));
+    *des_axon = binaryToDecimalUnsigned(des_axon_temp,sizeof(des_axon_temp)/sizeof(des_axon_temp[0]));
 }
 
 /***  Lấy số packet input của 1 ảnh mnist ***/

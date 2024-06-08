@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "packet.c"
 
 #define MAX_QUEUE_SIZE 1024 // Giới hạn kích thước hàng đợi
 
 // Định nghĩa cấu trúc nút của hàng đợi
 struct Node {
-    struct packet data;
+    int value;
     struct Node* next;
 };
 
@@ -23,8 +22,7 @@ struct Queue* createQueue() {
 }
 
 // Hàm thêm phần tử vào hàng đợi
-void enqueue(struct Queue* q, struct packet value) {
-    // Đếm số phần tử trong hàng đợi
+void enqueue(struct Queue* q, int value) {
     int count = 0;
     struct Node* current = q->front;
     while (current != NULL) {
@@ -33,12 +31,12 @@ void enqueue(struct Queue* q, struct packet value) {
     }
 
     if (count >= MAX_QUEUE_SIZE) {
-        fprintf(stderr, "Queue is full, cannot enqueue more packets\n");
+        fprintf(stderr, "Queue is full, cannot enqueue more values\n");
         return;
     }
 
     struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
-    temp->data = value;
+    temp->value = value;
     temp->next = NULL;
     if (q->rear == NULL) {
         q->front = q->rear = temp;
@@ -49,18 +47,18 @@ void enqueue(struct Queue* q, struct packet value) {
 }
 
 // Hàm lấy phần tử khỏi hàng đợi
-struct packet dequeue(struct Queue* q) {
+int dequeue(struct Queue* q) {
     if (q->front == NULL) {
         printf("Queue is empty\n");
-        exit(1); // Hàng đợi trống, thoát chương trình
+        exit(1);
     }
     struct Node* temp = q->front;
-    struct packet data = temp->data;
+    int value = temp->value;
     q->front = q->front->next;
     if (q->front == NULL)
         q->rear = NULL;
     free(temp);
-    return data;
+    return value;
 }
 
 // Hàm kiểm tra hàng đợi có rỗng không

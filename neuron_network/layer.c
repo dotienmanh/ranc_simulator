@@ -18,6 +18,7 @@ void create_network(struct layer layers[num_layer]){
                 for (int core = 0; core < num_core_layer_1; ++core){
                     layers[layer].cores[core].neurons = malloc(max_neuron_layer_1 * sizeof(struct neuron));
                     layers[layer].cores[core].max_neurons = max_neuron_layer_1;
+                    layers[layer].cores[core].queue = createQueue();
                 }
                 break;
             /** layer 1 **/
@@ -27,6 +28,7 @@ void create_network(struct layer layers[num_layer]){
                 for (int core = 0; core < (num_core_layer_2); ++core){
                     layers[layer].cores[core].neurons = malloc(max_neuron_layer_2 * sizeof(struct neuron));
                     layers[layer].cores[core].max_neurons = max_neuron_layer_2;
+                    layers[layer].cores[core].queue = createQueue();
                 }
                 break;
             /** layer 2 **/
@@ -36,17 +38,19 @@ void create_network(struct layer layers[num_layer]){
                 for (int core = 0; core < (num_core_layer_3); ++core){
                     layers[layer].cores[core].neurons = malloc(max_neuron_layer_3 * sizeof(struct neuron));
                     layers[layer].cores[core].max_neurons = max_neuron_layer_3;
+                    layers[layer].cores[core].queue = createQueue();
                 }
                 break;
             /** layer 3 **/
-            // case 3:
-            //     layers[layer].cores = malloc(num_core_layer_4 * sizeof(struct core));
-            //     layers[layer].max_cores = num_core_layer_4;
-            //     for (int core = 0; core < (num_core_layer_4); ++core){
-            //         layers[layer].cores[core].neurons = malloc(max_neuron_layer_4 * sizeof(struct neuron));
-            //         layers[layer].cores[core].max_neurons = max_neuron_layer_4;
-            //     }
-            //     break;
+            case 3:
+                layers[layer].cores = malloc(num_core_layer_4 * sizeof(struct core));
+                layers[layer].max_cores = num_core_layer_4;
+                for (int core = 0; core < (num_core_layer_4); ++core){
+                    layers[layer].cores[core].neurons = malloc(max_neuron_layer_4 * sizeof(struct neuron));
+                    layers[layer].cores[core].max_neurons = max_neuron_layer_4;
+                    layers[layer].cores[core].queue = createQueue();
+                }
+                break;
         }
     }
 }
