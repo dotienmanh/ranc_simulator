@@ -5,7 +5,7 @@
 #include <math.h>
 #include <unistd.h>
 #include "layer.c"
-#include "convert.c"
+// #include "convert.c"
 
 /*** Đọc file Csram ***/
 void readCsram(struct layer layers[]){
