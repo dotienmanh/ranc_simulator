@@ -19,7 +19,7 @@ def custom_clip(arr):
     arr = np.asarray(arr)
     
     # Apply the custom clipping
-    clipped_arr = np.where(arr > 0.8, 1, 0)
+    clipped_arr = np.where(arr > 0.7, 1, 0)
     
     return clipped_arr
     
