@@ -70,7 +70,7 @@ class AdditivePooling(layers.Layer):
             output = inputs
 
         # Reshape the outputs:
-        output = tf.reshape(output, [-1, int(self.num_inputs/self.num_classes), self.num_classes])
+        output = tf.reshape(output, [-1, int(self.num_inputs//self.num_classes), self.num_classes])
 
         # Sum up the neurons
         output = tf.math.reduce_sum(output, 1)

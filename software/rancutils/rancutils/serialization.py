@@ -153,7 +153,7 @@ def parse_cores(parent_json):
 
     return cores
 
-# Đọc data từ file json -> giải mã -> trả về list packets và cores
+# Đọc data từ file json -> giải mã -> ghi vào list packets và cores
 def load(filename):
     """Loads a list of packets and cores from a json file.
 

@@ -10,6 +10,7 @@ import numpy as np
 
 # From Imports:
 from tensorflow.keras import layers, activations, initializers, regularizers, constraints
+from tensorflow.keras.utils import get_custom_objects
 #from tensorflow.keras import backend as K
 # Custom Round Gradient:
 # In a TeaLayer the connections are rounded during the feedforward process.
@@ -18,6 +19,33 @@ from tensorflow.keras import layers, activations, initializers, regularizers, co
 @tf.RegisterGradient("CustomRound")
 def _const_round_grad(unused_op, grad):
     return grad
+
+# Custom sigmoid
+# Define the custom sigmoid function
+def sigmoid_custom(x, factor=1.0, name=None):
+    with tf.name_scope(name or "sigmoid_custom"):
+        x = tf.convert_to_tensor(x, name="x")
+        return 1 / (1 + tf.exp(-factor * x))
+
+# Register the custom sigmoid function with Keras
+get_custom_objects().update({'sigmoid_custom': sigmoid_custom})
+
+# Custom clip function
+#sửa clip
+@tf.custom_gradient
+def custom_clip(x):
+    def grad(dy):
+        return dy * tf.cast((x > 0.7) | (x <= 0.7), tf.float32)
+    return tf.where(x > 0.7, tf.ones_like(x), tf.zeros_like(x)), grad
+
+# @tf.custom_gradient
+# def custom_round(x,decimals=3):
+#     multiplier = tf.constant(10**decimals,dtype=x.dtype)
+#     rounded = tf.round(x * multiplier) / multiplier  # Round to 3 decimal places
+#     def grad(dy):
+#         # Gradient approximation for backpropagation
+#         return dy  # This assumes a straight-through estimator for simplicity
+#     return rounded, grad
 ######################################################################################################################################
 class Tea(layers.Layer):
     """
@@ -98,9 +126,11 @@ class Tea(layers.Layer):
     ##################################################################################################################################
     def __init__(self,
                  units,
-                 activation='sigmoid',
+                 activation='sigmoid_custom',
                  use_bias=True,
                  weight_initializer=None,
+                 #sửa bias (leak)
+                 #bias_initializer='ones',
                  bias_initializer='zeros',
                  connection_initializer=None,
                  connection_regularizer=None,
@@ -110,12 +140,18 @@ class Tea(layers.Layer):
                  clip_connections=True,
                  round_bias=True,
                  constrain_after_train=True,
+                 activation_factor=0.8, # custom_sigmoid
                  **kwargs):
         super(Tea, self).__init__(**kwargs)
         
         self.units=units
         
-        self.activation=activations.get(activation)
+        if activation == 'sigmoid_custom':
+            self.activation = lambda x: sigmoid_custom(x, factor=activation_factor)
+        else:
+            self.activation = activations.get(activation)
+        
+        # self.activation=activations.get(activation)
         
         self.use_bias=use_bias
 
@@ -184,15 +220,25 @@ class Tea(layers.Layer):
             # Connection Constraints:
             connections = self.connections
 
+            # x=0
             if self.round_connections:
+                # x=x+1
+                # print("round ")
+                # print(x)
                 connections = tf.keras.backend.round(connections)
             else:
                 connections = tf.keras.backend.in_train_phase(connections, tf.keras.backend.round(connections))
 
             if self.clip_connections:
-                connections = tf.keras.backend.clip(connections, 0, 1)
+                # x=x+1
+                # print("clip ")
+                # print(x)
+                # sửa clip
+                # connections = tf.keras.backend.clip(connections, 0, 1)
+                connections = custom_clip(connections)
             else:
-                connections = tf.keras.backend.in_train_phase(connections, tf.keras.backend.clip(connections, 0, 1))
+                # connections = tf.keras.backend.in_train_phase(connections, tf.keras.backend.clip(connections, 0, 1))
+                connections = tf.keras.backend.in_train_phase(connections, custom_clip(connections))
 
             # Multiply Connections with Weights:
             weighted_connections = connections * self.static_weights
@@ -213,7 +259,7 @@ class Tea(layers.Layer):
 
             # Apply activation / Spike(s)
             output = tf.keras.backend.in_train_phase(self.activation(output), 
-                                                     tf.dtypes.cast(tf.math.greater_equal(output, 0.0), tf.float32))
+                                                     tf.dtypes.cast(tf.math.greater_equal(output, 1.0), tf.float32)) #sửa pos threshold
 
         return output
     ##################################################################################################################################
@@ -249,8 +295,22 @@ def tea_weight_initializer(shape, dtype=np.float32):
         if axon_num % 2 == 0:
             for neuron in range(len(axon)):
                 ret_array[axon_num][neuron] = 1
-        else:
+        if axon_num % 2 == 1:
             for neuron in range(len(axon)):
                 ret_array[axon_num][neuron] = -1
 
+        # sửa weight
+        
+        # if axon_num % 4 == 0:
+        #     for neuron in range(len(axon)):
+        #         ret_array[axon_num][neuron] = 5
+        # if axon_num % 4 == 1:
+        #     for neuron in range(len(axon)):
+        #         ret_array[axon_num][neuron] = 3     
+        # if axon_num % 4 == 2:
+        #     for neuron in range(len(axon)):
+        #         ret_array[axon_num][neuron] = -3
+        # if axon_num % 4 == 3:
+        #     for neuron in range(len(axon)):
+        #         ret_array[axon_num][neuron] = -5
     return tf.convert_to_tensor(ret_array)

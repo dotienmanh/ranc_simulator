@@ -7,6 +7,3 @@ Author: Spencer Valancius, Ruben Purdy
 Author-email: svalancius12@email.arizona.edu, rubenpurdy@email.arizona.edu
 License: MIT
 Classifier: Programming Language :: Python :: 3.6.8
-Requires-Dist: tensorflow
-Requires-Dist: numpy
-Requires-Dist: Pillow

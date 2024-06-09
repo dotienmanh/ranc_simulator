@@ -35,24 +35,26 @@ class Neuron(object):
         formatted_weights = [BitArray(int=weight, length=weight_width)
                              for weight in self.weights]
         neuron_params = '{}{}{}{}{}{}{}'.format(
-            BitArray(int=self.current_potential, length=potential_width).bin,     #9bit
-            BitArray(int=self.reset_potential, length=potential_width).bin,       #9bit
-            ''.join([w.bin for w in formatted_weights]),                          #9*4bit
-            BitArray(int=self.leak, length=leak_width).bin,                       #9bit
-            BitArray(int=self.positive_threshold, length=threshold_width).bin,    #9bit
-            BitArray(int=self.negative_threshold, length=threshold_width).bin,    #9bit
+            BitArray(int=self.current_potential, length=potential_width).bin,
+            BitArray(int=self.reset_potential, length=potential_width).bin,
+            ''.join([w.bin for w in formatted_weights]),
+            BitArray(int=self.leak, length=leak_width).bin,
+            BitArray(int=self.positive_threshold, length=threshold_width).bin,
+            BitArray(int=self.negative_threshold, length=threshold_width).bin,
             BitArray(uint=self.reset_mode,
-                     length=num_reset_modes.bit_length()-1).bin                   #1bit
+                     length=num_reset_modes.bit_length()-1).bin
         )
 
         spike_destination = '{}{}{}'.format(
-            ''.join([BitArray(int=i, length=m.bit_length()-1).bin                 #18bit
+            ''.join([BitArray(int=i, length=m.bit_length()-1).bin
                      for i, m in zip(self.destination_core_offset, #self.destination_core,
                                      [max_dx, max_dy])]),
+            # BitArray(uint=self.destination_axon % (1 << (num_axons.bit_length() - 1)),  # Apply modulo to constrain the value
+            #      length=num_axons.bit_length()-1).bin,                        
             BitArray(uint=self.destination_axon,
-                     length=num_axons.bit_length()-1).bin,                        #8bit
+                     length=num_axons.bit_length()-1).bin,
             BitArray(uint=self.destination_tick,
-                     length=num_ticks.bit_length()-1).bin                         #4bit
+                     length=num_ticks.bit_length()-1).bin
         )
 
         return '{}{}'.format(neuron_params, spike_destination)
