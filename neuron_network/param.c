@@ -1,9 +1,9 @@
 #define max_mnist  10000
 #define class  10
 #define max_packet max_axon*4
-#define PATH "D:/Code/c_code/parameter/parameter5"
+#define PATH "D:/Code/parameter/param100"
 
-#define save_to_file 0  // Lưu ra file text
+#define save_to_file 1  // Lưu ra file text
 
 /*** Tham số cho network ***/
 #define num_layer 3
