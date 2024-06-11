@@ -12,3 +12,9 @@ struct core{
     int max_neurons;
     struct Queue *queue;
 };
+
+void create_core(struct core* core, int max_neurons) {
+    core->neurons = malloc(max_neurons * sizeof(struct neuron));
+    core->max_neurons = max_neurons;
+    core->queue = createQueue();
+}
