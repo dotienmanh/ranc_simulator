@@ -166,6 +166,7 @@ void active_network(struct layer layers[]){
         get_predict(f_predict,f_save_network_predict,number,mnist);
         reset_network(layers);
     }
+    printf("Done Loading MNIST\n");
     fclose(f_input);
     fclose(f_num_inputs);
     fclose(f_save_packet);

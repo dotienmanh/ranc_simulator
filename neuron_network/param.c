@@ -1,7 +1,7 @@
 #define max_mnist  10000
 #define class  10
 #define max_packet max_axon*4
-#define PATH "D:/Code/parameter/param99"
+#define PATH "D:/Code/parameter/param100"
 
 #define save_to_file 1  // Lưu ra file text
 
